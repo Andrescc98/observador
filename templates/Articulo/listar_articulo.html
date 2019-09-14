@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    
+<div class="row my-5">
+    {% for articulo in articulos %}
+        
+        <div class="card col-md-3 mx-2 mb-3 border-0 shadow-lg">
+            <div class="card-img ">
+                {%if not articulo.imagen%} 
+                    <img src="{% static 'img/default_img.png' %}" class="img-fluid" >
+                {% else %}
+                    <img src="{{articulo.imagen.url}} " class=" img-fluid img" height="200px">
+                {%endif%}
+            </div>
+            <div class="card-body m-3">
+                <h5 class="mb-1">{{articulo.titulo}}</h5>
+                <p class="text-info mb-1">Por: {{articulo.Periodista.nombre}} {{articulo.Periodista.apellido}}</p>
+                <p>{{articulo.contenido}}</p>
+            </div>
+        </div>
+       
+    {% endfor %}
+</div>     
+{% endblock content %}
+
+
+    
