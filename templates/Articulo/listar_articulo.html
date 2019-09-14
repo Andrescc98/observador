@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 
+{% load humanize %}
 {% block title %}
     Inicio
 {% endblock title %}
@@ -23,6 +24,9 @@
                 <h5 class="mb-1">{{articulo.titulo}}</h5>
                 <p class="text-info mb-1">Por: {{articulo.Periodista.nombre}} {{articulo.Periodista.apellido}}</p>
                 <p>{{articulo.contenido}}</p>
+            </div>
+            <div class="card-footer">
+                <em class="text-secondary">{{articulo.f_publicacion|naturaltime}}</em>
             </div>
         </div>
        
