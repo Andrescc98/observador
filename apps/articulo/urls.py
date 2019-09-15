@@ -5,6 +5,6 @@ from apps.articulo import views
 app_name='articulo'
 
 urlpatterns = [
-    path('', views.ArticuloListView.as_view(), name='articulo_listar'),
+    path('crear/', views.ArticuloCreateView.as_view(), name='articulo_crear'),
 ]
 

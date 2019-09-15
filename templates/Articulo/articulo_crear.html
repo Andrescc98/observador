@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+    <div>
+        <form action="" method="files">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="id_titulo">Titulo</label>
+                {{form.titulo}}
+            </div>
+
+            <div class="form-group">
+                <label for="id_Periodista">Periodista</label>
+                {{form.Periodista}}
+            </div>
+
+            <div class="form-group">
+                <label for="id_contenido">Contenido</label>
+                {{form.contenido}}
+            </div>
+
+           
+
+            <div class="form-group">
+                <label for="id_Categoria">Categoria</label>
+                {{form.Categoria}}
+            </div>
+
+            <div class="custom-file">
+                {{form.imagen}}
+                <label for="id_imagen" class="custom-file-label">imagen</label>
+            </div>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+    

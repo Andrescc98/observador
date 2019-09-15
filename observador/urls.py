@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from observador.views import ArticuloListView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.articulo.urls', namespace='articulo'), name='inicio'),
+    path('inicio/',ArticuloListView.as_view() , name='inicio'),
+    path('articulo/', include('apps.articulo.urls', namespace='articulo'), name='articulo')
 ]
 urlpatterns+= staticfiles_urlpatterns()
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
