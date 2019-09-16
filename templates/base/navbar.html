@@ -18,14 +18,19 @@
                 Categoria
                 </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Nacional</a>
-                <a class="dropdown-item" href="#">Internacional</a>
-                <a class="dropdown-item" href="#">Sucesos</a>
-                <a class="dropdown-item" href="#">Farandula</a>
-                <a class="dropdown-item" href="#">Tecnologia</a>
+                <a class="dropdown-item" href="{% url 'categoria' 1 %}">Nacional</a>
+                <a class="dropdown-item" href="{% url 'categoria' 2 %}">Internacional</a>
+                <a class="dropdown-item" href="{% url 'categoria' 3 %}">Sucesos</a>
+                <a class="dropdown-item" href="{% url 'categoria' 4 %}">Farandula</a>
+                <a class="dropdown-item" href="{% url 'categoria' 5 %}">Tecnologia</a>
                 
             </div>
             </li>
+            <div class="text-right">
+                <li>
+                <a href="#" class="btn btn-outline-primary">Iniciar sesión</a>
+            </li>
+            </div>
            <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>-->

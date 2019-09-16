@@ -3,10 +3,12 @@
 
 {% block content %}
     <div>
-        <form action="" method="files">
+        <form action="" method="POST">
             {% csrf_token %}
 
-            <div class="form-group">
+            {{form.as_p}}
+
+           <!-- <div class="form-group">
                 <label for="id_titulo">Titulo</label>
                 {{form.titulo}}
             </div>
@@ -29,10 +31,12 @@
             </div>
 
             <div class="custom-file">
+                <label for="id_imagen" >imagen</label>
                 {{form.imagen}}
-                <label for="id_imagen" class="custom-file-label">imagen</label>
+                
+                {{form.imagen.errors}}
             </div>
-
+-->
             <div class="text-center mt-3">
                 <button class="btn btn-primary">Guardar</button>
             </div>

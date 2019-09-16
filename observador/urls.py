@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
-from observador.views import ArticuloListView
+from observador.views import ArticuloListView,CategoriaListView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/',ArticuloListView.as_view() , name='inicio'),
-    path('articulo/', include('apps.articulo.urls', namespace='articulo'), name='articulo')
+    path('articulo/', include('apps.articulo.urls', namespace='articulo'), name='articulo'),
+    path('categoria/<int:cat>', CategoriaListView.as_view(), name='categoria'),
 ]
 urlpatterns+= staticfiles_urlpatterns()
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

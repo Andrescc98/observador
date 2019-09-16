@@ -28,5 +28,5 @@ class ArticuloForm(forms.ModelForm):
             'titulo':forms.TextInput(attrs={'class':'form-control'}),
             'contenido':forms.Textarea(attrs={'class':'form-control'}),
             'Categoria':forms.Select(attrs={'class':'form-control'}),
-            'imagen':forms.FileInput(attrs={'class':'custom-file-input'}),
+            
         }
