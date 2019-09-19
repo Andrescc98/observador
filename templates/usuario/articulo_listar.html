@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+
+{% load humanize %}
+
+{% block navbar %}
+    {% include 'base/navbar_usuario.html' %}
+{% endblock navbar %}
+    {{user}}
+
+{% block content %}
+    <div class="container my-5">
+        <h1 class="display-4 my-3">Lista de articulos creados</h1>
+        <div class="list-group">
+            
+            {% for articulo in object_list %}
+                <a href="{% url 'usuario:mostrar_articulo' articulo.pk %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{articulo.titulo}}</h5>
+                        <small class="text-muted">{{articulo.f_publicacion|naturaltime}}</small>
+                    </div>
+                    <p class="mb-1">{{articulo.contenido}}</p>
+                </a>
+            {% endfor %}
+                
+        </div>
+    </div>
+    {% include 'base/boton.html' %}
+{% endblock content %}
+
+
+</div>
+</div>
+
+{% block extrajs %}
+
+<script>
+    $(function(){
+        $('[data-toggle="popover"], .popover-dismiss').popover({
+            trigger:'focus', 
+        
+        })
+        $('[data-toggle="tooltip"]').tooltip()
+        
+    })
+</script>
+{% endblock extrajs %}
+    
+    

@@ -1,3 +1,11 @@
-__pycache__/
+/apps/articulo/__pycache__
+/apps/__pycache__
+/apps/periodista/__pycache__
+/apps/usuario/__pycache__
+/apps/articulo/migrations/__pycache__
 
-media/
+/observador/__pycache__
+
+/media/
+/.vscode
+/static/fonts

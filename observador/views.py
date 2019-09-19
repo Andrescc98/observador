@@ -4,7 +4,7 @@ from apps.articulo.models import Articulo
 
 
 class ArticuloListView(ListView):
-    queryset = Articulo.objects.order_by('f_publicacion')
+    queryset = Articulo.objects.order_by('-f_publicacion')
     template_name = "articulo/listar_articulo.html"
     context_object_name='articulos'
     paginate_by=5

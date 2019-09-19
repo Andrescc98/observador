@@ -135,4 +135,5 @@ MEDIA_URL='/media/'
 
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
-LOGIN_REDIRECT_URL=reverse_lazy('biblioteca:busqueda')
+LOGIN_REDIRECT_URL=reverse_lazy('usuario:listar_articulo')
+LOGOUT_REDIRECT_URL=reverse_lazy('inicio')

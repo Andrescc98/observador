@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from observador.views import ArticuloListView,CategoriaListView
+from django.contrib.auth.views import LoginView
 
 
 urlpatterns = [
@@ -25,6 +26,10 @@ urlpatterns = [
     path('inicio/',ArticuloListView.as_view() , name='inicio'),
     path('articulo/', include('apps.articulo.urls', namespace='articulo'), name='articulo'),
     path('categoria/<int:cat>', CategoriaListView.as_view(), name='categoria'),
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('accounts/login/', LoginView.as_view(template_name='login.html')),
+    path('usuario/', include('apps.usuario.urls') , name='usuario'),
+    
 ]
 urlpatterns+= staticfiles_urlpatterns()
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
